@@ -137,6 +137,8 @@ def build_package(package: dict, dependencies: list) -> None:
             build_intel(package['name'], package['commit_id'], package['scm_url'])
         elif package['build_cmd'] == 'build_mellanox_ofed':
             build_mellanox_ofed()
+        elif package['build_cmd'] == 'build_realtek_r8126':
+            build_realtek_r8126()
         elif package['build_cmd'] == 'build_realtek_r8152':
             build_realtek_r8152()
         elif package['build_cmd'] == 'build_jool':
@@ -227,6 +229,11 @@ def build_intel(driver_name: str, commit_id: str, scm_url: str):
 def build_mellanox_ofed():
     """Build Mellanox OFED"""
     run(['sudo', './build-mellanox-ofed.sh'], check=True)
+
+
+def build_realtek_r8126():
+    """Build Realtek r8126"""
+    run(['sudo', './build-realtek-r8126.py'], check=True)
 
 
 def build_realtek_r8152():
