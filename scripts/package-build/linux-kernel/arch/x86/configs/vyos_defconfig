@@ -6390,3 +6390,6 @@ CONFIG_ARCH_USE_MEMTEST=y
 #
 # end of Rust hacking
 # end of Kernel hacking
+
+# Add RNDIS_HOST module for Android USB tethering
+CONFIG_USB_NET_RNDIS_HOST=m
